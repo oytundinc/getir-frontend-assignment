@@ -11,7 +11,7 @@ function App() {
       <Button className="oytun">oytun</Button>
       <Input placeholder="OYTUN DINC" />
       <Checkbox chechboxText="Konopelski Group" />
-      <RadioButton chechboxText="Konopelski Group"/>
+      <RadioButton radioButtonText="Konopelski Group"/>
     </div>
   );
 }

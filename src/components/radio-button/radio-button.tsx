@@ -28,14 +28,14 @@ const RadioButtonStyled = styled.div`
 `;
 
 interface RadioButtonProps {
-  chechboxText: string;
+  radioButtonText: string;
 }
 
-export const RadioButton = ({ chechboxText }: RadioButtonProps) => {
+export const RadioButton = ({ radioButtonText }: RadioButtonProps) => {
   return (
     <RadioButtonStyled>
-      <input type="radio" id="checkboxText" name="checkboxText" />
-      <label htmlFor="checkboxText">{chechboxText} </label>
+      <input type="radio" id="radioButtonText" name="radioButtonText" />
+      <label htmlFor="radioButtonText">{radioButtonText} </label>
     </RadioButtonStyled>
   );
 };
