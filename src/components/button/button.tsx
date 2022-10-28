@@ -13,9 +13,9 @@ const ButtonStyled = styled.div`
   }
 `;
 
-interface ButtonProps {
+export interface ButtonProps {
   children: string;
-  className: string;
+  className?: string;
 }
 
 const WrappedButton = ({ children, className }: ButtonProps) => {
