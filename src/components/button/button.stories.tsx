@@ -1,5 +1,4 @@
 import { Meta } from "@storybook/react/types-6-0";
-import React from "react";
 import { Button, ButtonProps } from "./button";
 
 export default {
