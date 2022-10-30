@@ -1,12 +1,13 @@
 import "./App.css";
 import { Header } from "./widgets/header/header";
-import { Sorting } from "./widgets/sorting/sorting";
+import { Footer } from "./widgets/footer/footer";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Sorting />
+
+      <Footer />
     </div>
   );
 }
