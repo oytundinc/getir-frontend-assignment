@@ -1,31 +1,28 @@
 import styled from "styled-components";
 import { Input as AntInput } from "antd";
+import { fontSize, fontWeight } from "../../common/theme/font";
+import { commonColors } from "../../common/theme/color";
 
 export const InputStyled = styled(AntInput)`
-border: 2px solid #e0e0e0;
+border: 2px solid #${commonColors.grayMedium};
 border-radius: 2px;
 
-font-family: "Inter";
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
+font-weight: ${fontWeight.regular};
+font-size: ${fontSize.medium};
 line-height: 24px;
-
 letter-spacing: 0.15px;
-
-color: #a8a8a8;
+color: ${commonColors.grayLight};
 
 &::placeholder {
   padding: 12px 141px 12px 16px;
-  font-family: "Inter";
-  color: #e0e0e0;
-  font-size: 14px;
+  color: ${commonColors.grayMedium};
+  font-size: ${fontSize.medium};
 }
 
 &:active,
 &:focus,
 &:hover {
-  border: 2px solid #1ea4ce;
+  border: 2px solid ${commonColors.primary};
   outline: none;
 }
 `;

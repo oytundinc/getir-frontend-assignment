@@ -1,4 +1,5 @@
 import { Divider } from "antd";
+import { CURRENCY_SYMBOL } from "../../common/constants/currency";
 import { BasketItem } from "../../components/basket-item/basket-item";
 import { Card } from "../../components/card/card";
 import { ItemCounter } from "../../components/itemCounter/itemCounter";
@@ -14,7 +15,7 @@ export const WrappedBasket = () => {
             <div className="basket-product-list">
               <BasketItem
                 productName={"Example Product"}
-                productPriceCurrency={"₺"}
+                productPriceCurrency={CURRENCY_SYMBOL.TRY}
                 productPrice={10}
               />
               <ItemCounter />
@@ -23,7 +24,7 @@ export const WrappedBasket = () => {
             <div className="basket-product-list">
               <BasketItem
                 productName={"Example Product"}
-                productPriceCurrency={"₺"}
+                productPriceCurrency={CURRENCY_SYMBOL.TRY}
                 productPrice={10}
               />
               <ItemCounter />

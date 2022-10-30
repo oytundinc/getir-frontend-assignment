@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "antd";
 import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import { ButtonProps as AntButtonProps } from "antd";
@@ -14,7 +14,7 @@ export interface ItemCounterProps
   count?: number;
 }
 
-export const ItemCounter = () => {
+export const WrappedItemCounter = () => {
   const [count, setCount] = useState(0);
   const increase = () => {
     setCount(count + 1);
@@ -26,10 +26,6 @@ export const ItemCounter = () => {
     }
     setCount(newCount);
   };
-  const random = () => {
-    const newCount = Math.floor(Math.random() * 100);
-    setCount(newCount);
-  };
 
   return (
     <ItemCounterStyled>
@@ -37,7 +33,7 @@ export const ItemCounter = () => {
         <Button className="decrease-btn" onClick={decrease} icon>
           <MinusOutlined />
         </Button>
-        <Button className="count-btn" onClick={random}>
+        <Button className="count-btn">
           {count}
         </Button>
         <Button className="increase-btn" onClick={increase}>
@@ -48,4 +44,4 @@ export const ItemCounter = () => {
   );
 };
 
-export const ItemButton = React.memo(ItemCounter);
+export const ItemCounter = WrappedItemCounter;

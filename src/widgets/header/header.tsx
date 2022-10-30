@@ -1,3 +1,4 @@
+import React from "react";
 import { HeaderLogo } from "../../components/header/header-logo";
 import { HeaderStyled } from "./header.styles";
 
@@ -11,4 +12,4 @@ export const WrappedHeader = () => {
   );
 };
 
-export const Header = WrappedHeader;
+export const Header = React.memo(WrappedHeader);

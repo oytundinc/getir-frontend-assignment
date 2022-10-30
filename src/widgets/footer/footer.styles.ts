@@ -1,23 +1,26 @@
 import styled from "styled-components";
+import { commonColors } from "../../common/theme/color";
+import { fontSize, fontWeight } from "../../common/theme/font";
 
 export const FooterStyled = styled.div`
   .footer-container {
     width: 100%;
-    background-color: unset;
     margin-top: 100px;
     margin-bottom: 40px;
     text-align: center;
 
+    background-color: unset;
+
     span {
-      font-weight: 400;
-      font-size: 13px;
+      font-weight: ${fontWeight.regular};
+      font-size: ${fontSize.regular};
       line-height: 174%;
 
-      color: #1ea4ce;
+      color: ${commonColors.primary};
     }
 
     .second-text {
-        padding: 0 16px;
+      padding: 0 16px;
     }
   }
 `;

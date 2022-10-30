@@ -1,4 +1,5 @@
 import React from "react";
+import { CURRENCY_SYMBOL } from "../../common/constants/currency";
 import { BasketItemStyled } from "./basket-item.styles";
 
 export interface BasketItemProps {
@@ -10,7 +11,7 @@ export interface BasketItemProps {
 
 const WrappedBasketItem = ({
   productName = "Example Product",
-  productPriceCurrency = "₺",
+  productPriceCurrency = CURRENCY_SYMBOL.TRY,
   productPrice = 10,
 }: BasketItemProps) => {
   return (

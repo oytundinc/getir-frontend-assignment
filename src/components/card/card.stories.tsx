@@ -2,7 +2,7 @@ import { Meta } from '@storybook/react';
 import { Card, CardProps } from "./card";
 
 export default {
-    title: 'Components/Card',
+    title: 'components/card',
     component: Card,
     argTypes: {
         extra: {

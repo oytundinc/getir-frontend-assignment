@@ -1,4 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
+import { CURRENCY_SYMBOL } from "../../common/constants/currency";
 import { BasketItem, BasketItemProps } from "./basket-item";
 
 export default {
@@ -17,7 +18,7 @@ export default {
 const Template = (props: BasketItemProps) => (
   <BasketItem
     productName={"Example Product"}
-    productPriceCurrency={"₺"}
+    productPriceCurrency={CURRENCY_SYMBOL.TRY}
     productPrice={10}
   />
 );

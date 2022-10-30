@@ -1,21 +1,22 @@
 import styled from "styled-components";
 import { Button as AntButton } from "antd";
+import { commonColors } from "../../common/theme/color";
+import { fontSize, fontWeight } from "../../common/theme/font";
 
 export const ButtonStyled = styled(AntButton)`
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-
-  font-size: 12px;
-  font-weight: 600;
-  height: 36px;
-  color: #ffffff;
-
   padding: 0px 16px;
+
+  font-size: ${fontSize.small};
+  font-weight: ${fontWeight.semibold};
+  color: ${commonColors.white};
+
   text-align: center;
 
-  background-color: #1ea4ce;
+  background-color: ${commonColors.primary};
   border: none;
   border-radius: 2px;
 `;

@@ -1,23 +1,24 @@
 import styled from "styled-components";
 import { Radio as AntRadio } from "antd";
+import { commonColors } from "../../common/theme/color";
+import { fontSize, fontWeight } from "../../common/theme/font";
 
 export const RadioButtonStyled = styled(AntRadio)`
   display: flex;
   align-items: center;
-
   position: relative;
-
   box-sizing: border-box;
   cursor: pointer;
+
   .ant-radio {
     display: inline-block;
     margin-right: 5px;
     margin-top: -6px;
-
     position: relative;
 
     outline: none;
     cursor: pointer;
+
     input {
       padding: 0;
 
@@ -45,9 +46,9 @@ export const RadioButtonStyled = styled(AntRadio)`
         top: 1px;
         left: 2px;
 
-        border: 2px solid #1ea4ce;
+        border: 2px solid ${commonColors.primary};
         border-radius: 17.5px;
-        background-color: #ffffff;
+        background-color: ${commonColors.white};
 
         &:after {
           content: "";
@@ -64,8 +65,8 @@ export const RadioButtonStyled = styled(AntRadio)`
           opacity: 0;
           transform: rotate(45deg);
 
-          border-bottom: 1px solid #1ea4ce;
-          border-right: 1px solid #1ea4ce;
+          border-bottom: 1px solid ${commonColors.primary};
+          border-right: 1px solid ${commonColors.primary};
         }
       }
     }
@@ -85,19 +86,16 @@ export const RadioButtonStyled = styled(AntRadio)`
   }
   span {
     &:not(.ant-radio-inner) {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 18px;
-
       display: flex;
       align-items: center;
-      letter-spacing: 0.16px;
-
-      color: #525252 !important;
 
       padding-left: 10px;
+
+      font-weight: ${fontWeight.regular};
+      font-size: ${fontSize.medium};
+      line-height: 18px;
+      letter-spacing: 0.16px;
+      color: ${commonColors.grayDark} !important;
     }
   }
 `;

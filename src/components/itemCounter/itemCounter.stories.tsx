@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import { ItemButton, ItemCounter, ItemCounterProps } from "./itemCounter";
+import { ItemCounter, ItemCounterProps } from "./itemCounter";
 
 export default {
   title: "components/itemCounter",
@@ -12,6 +12,6 @@ export default {
   },
 } as Meta;
 
-const Template = (props: ItemCounterProps) => <ItemButton />;
+const Template = (props: ItemCounterProps) => <ItemCounter />;
 
 export const Default = Template.bind({});
