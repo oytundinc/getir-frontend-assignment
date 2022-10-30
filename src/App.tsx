@@ -1,10 +1,12 @@
 import "./App.css";
-import { WrappedHeader } from "./widgets/header/header";
+import { Header } from "./widgets/header/header";
+import { Sorting } from "./widgets/sorting/sorting";
 
 function App() {
   return (
     <div className="App">
-      <WrappedHeader />
+      <Header />
+      <Sorting />
     </div>
   );
 }

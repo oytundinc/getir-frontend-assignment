@@ -1,12 +1,12 @@
 import { Meta } from "@storybook/react/types-6-0";
-import { Header } from "./header";
+import { Sorting } from "./sorting";
 
 export default {
-  title: "widgets/header",
-  component: Header,
+  title: "widgets/sorting",
+  component: Sorting,
   argTypes: {},
 } as Meta;
 
-const Template = () => <Header></Header>;
+const Template = () => <Sorting />;
 
 export const Default = Template.bind({});
