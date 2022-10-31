@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { GlobalStyle } from "./common/theme/global-style";
 import reportWebVitals from "./reportWebVitals";
 import { configureStore } from "./store/root";
-import "antd/dist/antd.min.css";
+import "antd/dist/antd.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

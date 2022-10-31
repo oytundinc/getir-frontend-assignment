@@ -3,12 +3,18 @@ import { CheckboxStyled } from "./checkbox.styles";
 export interface CheckboxProps {
   children: string;
   value?: string;
-  onChange?: () => void;
+  onChange?: (event: any) => void;
+  checked?: boolean;
 }
 
-export const Checkbox = ({ children, onChange, value }: CheckboxProps) => {
+export const Checkbox = ({
+  children,
+  onChange,
+  value,
+  checked,
+}: CheckboxProps) => {
   return (
-    <CheckboxStyled value={value} onChange={onChange}>
+    <CheckboxStyled value={value} onChange={onChange} checked={checked}>
       {children}
     </CheckboxStyled>
   );

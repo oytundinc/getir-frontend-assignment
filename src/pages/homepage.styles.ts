@@ -4,7 +4,9 @@ import { fontSize, fontWeight } from "../common/theme/font";
 
 export const HomePageWrapped = styled.div`
   .home-page-container {
-    margin: 38px 104px !important;
+    max-width: 1232px;
+    width: 100%;
+    margin: 38px auto !important;
 
     .ant-col-12 {
       .product-header {
@@ -23,6 +25,38 @@ export const HomePageWrapped = styled.div`
         padding-bottom: 16px;
         .ant-btn {
           margin-right: 8px;
+        }
+      }
+      .ant-card-bordered {
+        border: none;
+      }
+
+      .product-list {
+        padding: 20px;
+      }
+
+      .ant-card {
+        .ant-card-body {
+          .product-card-container {
+            display: grid;
+            align-items: center;
+            .product-img {
+            }
+            .product-card-text-container {
+              .product-card-price {
+              }
+              .product-card-brand {
+              }
+              .product-card-tag {
+              }
+            }
+
+            .ant-btn {
+              span {
+                padding: 1px 50px;
+              }
+            }
+          }
         }
       }
     }

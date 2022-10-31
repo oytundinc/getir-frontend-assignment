@@ -27,7 +27,7 @@ export const WrappedBasket = () => {
         <Card>
           <>
             {Object.values(basketItems).map((item: BasketItemType) => {
-              console.log(item.name)
+              console.log(item.name);
               return (
                 <div key={item.productId}>
                   <div className="basket-product-list">
@@ -43,7 +43,7 @@ export const WrappedBasket = () => {
               );
             })}
 
-            <TotalAmount totalbasketamount={totalPrice} />
+            <TotalAmount />
           </>
         </Card>
       </div>

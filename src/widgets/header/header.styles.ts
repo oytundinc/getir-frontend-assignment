@@ -14,6 +14,7 @@ export const HeaderStyled = styled.div`
     }
 
     .header-total-amount-container {
+      display: flex;
       width: 129px;
       height: 76px;
 

@@ -39,6 +39,11 @@ interface ProductState {
     brands: BrandType[];
     tags: TagType[];
   };
+  pagination?: {
+    page: number;
+    totolRecords: number;
+    limit: number;
+  };
 }
 
 const initialState: ProductState = {
@@ -50,6 +55,7 @@ const initialState: ProductState = {
     brands: [],
     tags: [],
   },
+  // pagination: {},
 };
 
 export const productReducer = (state = initialState, action: any) => {
@@ -97,8 +103,6 @@ export const productReducer = (state = initialState, action: any) => {
       return produce(state, (draft) => {
         const sortingRule = SortingRules[action.payload as SORTING_TYPE];
 
-        console.log(sortingRule);
-
         draft.filteredList = _.orderBy(
           original(draft.filteredList),
           [sortingRule[0]],
@@ -106,6 +110,61 @@ export const productReducer = (state = initialState, action: any) => {
         );
 
         draft.filterOptions.sorting = action.payload;
+      });
+    }
+
+    case ACTION_TYPES.FILTER_PRODUCTS_BY_BRAND: {
+      return produce(state, (draft) => {
+        draft.filterOptions.brands = action.payload;
+        const sortingRule =
+          SortingRules[draft.filterOptions.sorting as SORTING_TYPE];
+
+        const list = original(draft.list) as Product[];
+
+        let result = list.filter(
+          (item: any) => item.itemType === draft.selectedCategory
+        );
+
+        result = _.orderBy(result, [sortingRule[0]], [sortingRule[1]]);
+
+        if (action.payload && action.payload.length > 0) {
+          draft.filteredList = result?.filter((item: Product) => {
+            return action.payload.includes(item.manufacturer);
+          });
+        } else {
+          draft.filteredList = result;
+        }
+      });
+    }
+
+    case ACTION_TYPES.FILTER_PRODUCTS_BY_TAG: {
+      return produce(state, (draft) => {
+        draft.filterOptions.tags = action.payload;
+        const sortingRule =
+          SortingRules[draft.filterOptions.sorting as SORTING_TYPE];
+
+        const list = original(draft.list) as Product[];
+
+        let result = list.filter(
+          (item: any) => item.itemType === draft.selectedCategory
+        );
+
+        result = _.orderBy(result, [sortingRule[0]], [sortingRule[1]]);
+
+        if (action.payload && action.payload.length > 0) {
+          draft.filteredList = result?.filter((item: Product) => {
+            let hasTag = false;
+            item.tags.forEach((tag) => {
+              if (action.payload.includes(tag)) {
+                hasTag = true;
+                return;
+              }
+            });
+            return hasTag;
+          });
+        } else {
+          draft.filteredList = result;
+        }
       });
     }
     default:

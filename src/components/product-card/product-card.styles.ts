@@ -3,8 +3,13 @@ import { commonColors } from "../../common/theme/color";
 import { fontSize, fontWeight } from "../../common/theme/font";
 
 export const ProductCardStyled = styled.div`
+  .ant-card-bordered {
+    border: none;
+    background-color: ${commonColors.white};
+
+  }
   .ant-card {
-    max-width: 124px;
+    // max-width: 124px;
     max-height: 225px;
 
     background-color: ${commonColors.white};
@@ -13,7 +18,7 @@ export const ProductCardStyled = styled.div`
         .product-img {
           display: flex;
           justify-content: center;
-          
+
           background: #fefefe;
           border: 1.17666px solid #f3f0fe;
           border-radius: 12px;
@@ -24,7 +29,7 @@ export const ProductCardStyled = styled.div`
             font-weight: ${fontWeight.regular};
             font-size: ${fontSize.medium};
             line-height: 20px;
-            color: #1ea4ce;
+            color: ${commonColors.primary};
           }
 
           .product-card-brand,

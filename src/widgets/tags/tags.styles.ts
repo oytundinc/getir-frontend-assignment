@@ -15,27 +15,19 @@ export const TagsStyled = styled.div`
     }
     .ant-card {
       .ant-card-body {
-        width: 296px;
-        height: 184px;
-
+        display: flex;
+        flex-direction: column;
         overflow: auto;
+        
+        height: 184px;
+        padding: 16px;
 
-        .tags-card-container {
-          padding: 24px;
+        .brand-list {
+          flex: 1;
+          overflow: auto;
 
-          .tags-checkbox-btn {
-            display: grid;
-            padding-top: 17px;
-            padding-bottom: 13px;
-
-            .ant-checkbox-wrapper {
-              margin-left: 0;
-              padding-top: 18px;
-
-              &:first-child {
-                padding-top: 0px;
-              }
-            }
+          .ant-checkbox-wrapper {
+            display: flex;
           }
         }
       }

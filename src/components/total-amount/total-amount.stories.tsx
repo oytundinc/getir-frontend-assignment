@@ -15,7 +15,7 @@ export default {
 } as Meta;
 
 const Template = (props: TotalAmountProps) => (
-  <TotalAmount totalbasketamount={10} />
+  <TotalAmount />
 );
 
 export const Default = Template.bind({});

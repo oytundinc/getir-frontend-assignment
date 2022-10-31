@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 import { api } from "../api/api";
 import { useDispatch, useSelector } from "react-redux";
 import { ACTION_TYPES } from "../store/action-types";
-import { Col, Row } from "antd";
+import { Col, Pagination, Row } from "antd";
 import { ProductCard } from "../components/product-card/product-card";
 import { Sorting } from "../widgets/sorting/sorting";
 import { Brands } from "../widgets/brands/brands";
@@ -12,6 +12,7 @@ import { HomePageWrapped } from "./homepage.styles";
 import { Card } from "../components/card/card";
 import { Button } from "../components/button/button";
 import { CategoryType } from "../store/reducers/filter.reducer";
+import { useImmer } from "use-immer";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,17 @@ export const HomePage = () => {
     categories,
     selectedCategory,
   } = useSelector((state: any) => state.product);
+
+  const filterOptions = useSelector(
+    (state: any) => state.product.filterOptions
+  );
+
+  const [pagination, setPagination] = useImmer<{ page: number; limit: number }>(
+    {
+      page: 1,
+      limit: 16,
+    }
+  );
 
   const fetchInitialData = useCallback(async () => {
     const companiesResponse = await api.getCompanies();
@@ -39,12 +51,31 @@ export const HomePage = () => {
     fetchInitialData();
   }, [fetchInitialData]);
 
-  const handleSelectCategory = useCallback((item: string) => {
-    dispatch({
-      type: ACTION_TYPES.SELECT_CATEGORY,
-      payload: item,
+  const handleChangePagination = useCallback((value: number) => {
+    setPagination((draft) => {
+      draft.page = value;
     });
-  }, [dispatch]);
+  }, [setPagination]);
+
+  const handleSelectCategory = useCallback(
+    (item: string) => {
+      dispatch({
+        type: ACTION_TYPES.SELECT_CATEGORY,
+        payload: item,
+      });
+    },
+    [dispatch]
+  );
+
+  const resetPagination = () => {
+    setPagination((draft) => {
+      draft.page = 1;
+    });
+  };
+
+  useEffect(() => {
+    resetPagination();
+  }, [filterOptions.brands, filterOptions.tags]);
 
   return (
     <HomePageWrapped>
@@ -69,23 +100,35 @@ export const HomePage = () => {
               );
             })}
           </div>
-          <Card>
-            <Row gutter={16}>
-              {products.map((product: any) => {
-                return (
-                  <Col key={product.added} span={6}>
-                    <ProductCard
-                      productId={product.added}
-                      productPrice={product.price}
-                      productName={product.name}
-                      productBrand={product.manufacturer}
-                      productTags={product.tags}
-                    />
-                  </Col>
-                );
-              })}
+          <Card className="product-list">
+            <Row gutter={8}>
+              {products
+                .slice(
+                  pagination.limit * (pagination.page - 1),
+                  pagination.limit * pagination.page
+                )
+                .map((product: any) => {
+                  return (
+                    <Col key={product.added} span={6}>
+                      <ProductCard
+                        productId={product.added}
+                        productPrice={product.price}
+                        productName={product.name}
+                        productBrand={product.manufacturer}
+                        productTags={product.tags}
+                      />
+                    </Col>
+                  );
+                })}
             </Row>
           </Card>
+          <Pagination
+            current={pagination.page}
+            total={products.length}
+            pageSize={16}
+            showSizeChanger={false}
+            onChange={handleChangePagination}
+          />
         </Col>
         <Col span={6}>
           <Basket />

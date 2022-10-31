@@ -15,12 +15,11 @@ export const SortingStyled = styled.div`
     }
     .ant-card {
       .ant-card-body {
-        width: 296px;
         height: 184px;
 
         .sorting-radio-btn {
           padding: 24px;
-          
+
           .ant-radio-wrapper {
             padding-top: 16px;
 
