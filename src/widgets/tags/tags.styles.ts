@@ -17,7 +17,9 @@ export const TagsStyled = styled.div`
       .ant-card-body {
         width: 296px;
         height: 184px;
-        
+
+        overflow: auto;
+
         .tags-card-container {
           padding: 24px;
 

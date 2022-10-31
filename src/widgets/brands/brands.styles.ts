@@ -18,6 +18,8 @@ export const BrandsStyled = styled.div`
         width: 296px;
         height: 184px;
 
+        overflow: auto;
+
         .brands-card-container {
           padding: 24px;
 

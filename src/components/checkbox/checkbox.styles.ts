@@ -84,7 +84,6 @@ export const CheckboxStyled = styled(AntCheckbox)`
     &:not(.ant-checkbox-inner) {
       display: flex;
       align-items: center;
-      padding-left: 10px;
 
       font-weight: ${fontWeight.regular};
       font-size: ${fontSize.medium};

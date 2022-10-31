@@ -89,7 +89,6 @@ export const RadioButtonStyled = styled(AntRadio)`
       display: flex;
       align-items: center;
 
-      padding-left: 10px;
 
       font-weight: ${fontWeight.regular};
       font-size: ${fontSize.medium};

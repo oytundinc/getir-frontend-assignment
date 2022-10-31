@@ -1,16 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { Provider } from "react-redux";
 import { GlobalStyle } from "./common/theme/global-style";
 import reportWebVitals from "./reportWebVitals";
+import { configureStore } from "./store/root";
+import "antd/dist/antd.min.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const store = configureStore();
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

@@ -10,7 +10,13 @@ export const ItemCounterStyled = styled.div`
       color: ${commonColors.primary};
       background: ${commonColors.white};
     }
+    .decrease-btn {
+      padding: 0px 11px 0px 0px;
+    }
 
+    .increase-btn {
+      padding: 0px 0px 0px 11px;
+    }
     .count-btn {
       width: 32px;
       height: 32px;

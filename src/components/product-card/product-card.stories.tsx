@@ -14,6 +14,12 @@ export default {
   },
 } as Meta;
 
-const Template = (props: ProductCardProps) => <ProductCard productPrice={0} productBrand={"Gorgeous Office "} productTag={"Mug"} />;
+const Template = (props: ProductCardProps) => (
+  <ProductCard
+    productPrice={0}
+    productBrand={"Gorgeous Office "}
+    productTags={["Mug"]}
+  />
+);
 
 export const Default = Template.bind({});

@@ -1,9 +1,20 @@
+import { useCallback, useState } from "react";
 import { Card } from "../../components/card/card";
 import Checkbox from "../../components/checkbox/checkbox";
 import Input from "../../components/input/input";
 import { TagsStyled } from "./tags.styles";
+import { useSelector } from "react-redux";
 
 export const WrappedTags = () => {
+  const { tags } = useSelector((state: any) => state.global);
+  const [searchKey, setSearchKey] = useState<string>("");
+
+  const handleSearch = useCallback(
+    (event: any) => {
+      setSearchKey(event.target.value);
+    },
+    [setSearchKey]
+  );
   return (
     <TagsStyled>
       <div className="tags-container">
@@ -11,14 +22,22 @@ export const WrappedTags = () => {
         <Card>
           <div className="tags-card-container">
             <div className="tags-input">
-              <Input placeholder="Search tag" />
+              <Input placeholder="Search tag" onChange={handleSearch}/>
             </div>
             <div className="tags-checkbox-btn">
-              <Checkbox>People</Checkbox>
-              <Checkbox>People</Checkbox>
-              <Checkbox>People</Checkbox>
-              <Checkbox>People</Checkbox>
-              <Checkbox>People</Checkbox>
+            {tags
+                .filter((tags: string) => {
+                  return searchKey
+                    ? !tags.search(new RegExp(searchKey.toLowerCase(), "i"))
+                    : true;
+                })
+                .map((tags: string, index: number) => {
+                  return (
+                    <Checkbox key={`${tags}_${index}`} value={tags}>
+                      {tags}
+                    </Checkbox>
+                  );
+                })}
             </div>
           </div>
         </Card>

@@ -3,12 +3,12 @@ import { commonColors } from "../../common/theme/color";
 
 export const BasketStyled = styled.div`
   .basket-container {
-    background: ${commonColors.primary};
-
     border-radius: 2px;
 
     .ant-card {
       padding: 8px;
+
+      background-color: ${commonColors.primary};
 
       .ant-card-body {
         padding: 0px 22px;
@@ -17,13 +17,15 @@ export const BasketStyled = styled.div`
           display: flex;
           padding-bottom: 18px;
           padding-top: 18px;
-
+          .basket-item-container {
+            padding-right: 43px;
+          }
           .item-counter-container {
-            padding-left: 43px;
           }
         }
       }
       .ant-divider {
+        margin: 0px;
         height: 1px;
         background: ${commonColors.grayDivider};
       }
