@@ -26,5 +26,18 @@ export const HomePageWrapped = styled.div`
         }
       }
     }
+
+    .ant-col-6 {
+      .item-counter-container {
+        .count-btn {
+          padding: 0px;
+        }
+      }
+
+      .brands-container,
+      .tags-container {
+        padding-top: 24px;
+      }
+    }
   }
 `;

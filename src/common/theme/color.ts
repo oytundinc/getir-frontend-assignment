@@ -1,5 +1,6 @@
 export const commonColors = {
   primary: "#1ea4ce",
+  secondary: "#147594",
   white: "#ffffff",
   black: "#191919",
   grayxDark: "#6f6f6f",

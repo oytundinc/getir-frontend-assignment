@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import { Header } from "./header";
+import { Header, HeaderTotalAmountProps } from "./header";
 
 export default {
   title: "widgets/header",
@@ -7,6 +7,8 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template = () => <Header></Header>;
+const Template = (props: HeaderTotalAmountProps) => (
+  <Header totalbasketamount={(34.45)}></Header>
+);
 
 export const Default = Template.bind({});
