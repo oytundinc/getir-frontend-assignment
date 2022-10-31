@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { Checkbox as AntCheckbox } from "antd";
-import { commonColors } from "../../common/theme/color";
-import { fontSize, fontWeight } from "../../common/theme/font";
 
 export const CheckboxStyled = styled(AntCheckbox)`
   .ant-checkbox-inner {

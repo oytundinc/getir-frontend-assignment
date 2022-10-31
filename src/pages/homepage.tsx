@@ -67,15 +67,15 @@ export const HomePage = () => {
     [dispatch]
   );
 
-  const resetPagination = () => {
+  const resetPagination = useCallback(() => {
     setPagination((draft) => {
       draft.page = 1;
     });
-  };
+  }, [setPagination]);
 
   useEffect(() => {
     resetPagination();
-  }, [filterOptions.brands, filterOptions.tags]);
+  }, [filterOptions.brands, filterOptions.tags, resetPagination]);
 
   return (
     <HomePageWrapped>

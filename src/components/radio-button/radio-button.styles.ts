@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Radio as AntRadio } from "antd";
 import { commonColors } from "../../common/theme/color";
-import { fontSize, fontWeight } from "../../common/theme/font";
 
 export const RadioButtonStyled = styled(AntRadio)`
   .ant-radio-inner {

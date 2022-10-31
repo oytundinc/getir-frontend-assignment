@@ -1,5 +1,4 @@
 import { Divider } from "antd";
-import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { CURRENCY_SYMBOL } from "../../common/constants/currency";
 import { BasketItem } from "../../components/basket-item/basket-item";
@@ -14,13 +13,6 @@ export const WrappedBasket = () => {
     (state: any) => state.basket.items
   );
 
-  const totalPrice = useMemo(() => {
-    let total = 0;
-    Object.values(basketItems).forEach((item: BasketItemType) => {
-      total += item.price * item.amount;
-    });
-    return total;
-  }, [basketItems]);
   return (
     <BasketStyled>
       <div className="basket-container">
