@@ -14,7 +14,7 @@ import { Button } from "../components/button/button";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
-  const { companies, products } = useSelector((state: any) => state.global);
+  const { /* companies */ products } = useSelector((state: any) => state.global);
 
   const fetchInitialData = useCallback(async () => {
     const companiesResponse = await api.getCompanies();
@@ -28,11 +28,11 @@ export const HomePage = () => {
       type: ACTION_TYPES.SET_ALL_OF_PRODUCTS,
       payload: productsResponse.data,
     });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     fetchInitialData();
-  }, []);
+  }, [fetchInitialData]);
 
   console.log(global);
   return (
