@@ -11,10 +11,15 @@ import { Basket } from "../widgets/basket/basket";
 import { HomePageWrapped } from "./homepage.styles";
 import { Card } from "../components/card/card";
 import { Button } from "../components/button/button";
+import { CategoryType } from "../store/reducers/filter.reducer";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
-  const { /* companies */ products } = useSelector((state: any) => state.global);
+  const {
+    filteredList: products,
+    categories,
+    selectedCategory,
+  } = useSelector((state: any) => state.product);
 
   const fetchInitialData = useCallback(async () => {
     const companiesResponse = await api.getCompanies();
@@ -34,7 +39,13 @@ export const HomePage = () => {
     fetchInitialData();
   }, [fetchInitialData]);
 
-  console.log(global);
+  const handleSelectCategory = useCallback((item: string) => {
+    dispatch({
+      type: ACTION_TYPES.SELECT_CATEGORY,
+      payload: item,
+    });
+  }, [dispatch]);
+
   return (
     <HomePageWrapped>
       <Row gutter={16} className="home-page-container">
@@ -46,8 +57,17 @@ export const HomePage = () => {
         <Col span={12}>
           <h2 className="product-header">Products</h2>
           <div className="product-btn">
-            <Button>mug</Button>
-            <Button>shirt</Button>
+            {categories.map((item: CategoryType) => {
+              return (
+                <Button
+                  onClick={() => handleSelectCategory(item)}
+                  className={item === selectedCategory ? "selected" : ""}
+                  key={item}
+                >
+                  {item}
+                </Button>
+              );
+            })}
           </div>
           <Card>
             <Row gutter={16}>
@@ -55,7 +75,9 @@ export const HomePage = () => {
                 return (
                   <Col key={product.added} span={6}>
                     <ProductCard
+                      productId={product.added}
                       productPrice={product.price}
+                      productName={product.name}
                       productBrand={product.manufacturer}
                       productTags={product.tags}
                     />

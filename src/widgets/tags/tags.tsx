@@ -6,7 +6,7 @@ import { TagsStyled } from "./tags.styles";
 import { useSelector } from "react-redux";
 
 export const WrappedTags = () => {
-  const { tags } = useSelector((state: any) => state.global);
+  const tags = useSelector((state: any) => state.filter.tags);
   const [searchKey, setSearchKey] = useState<string>("");
 
   const handleSearch = useCallback(
@@ -22,10 +22,10 @@ export const WrappedTags = () => {
         <Card>
           <div className="tags-card-container">
             <div className="tags-input">
-              <Input placeholder="Search tag" onChange={handleSearch}/>
+              <Input placeholder="Search tag" onChange={handleSearch} />
             </div>
             <div className="tags-checkbox-btn">
-            {tags
+              {tags
                 .filter((tags: string) => {
                   return searchKey
                     ? !tags.search(new RegExp(searchKey.toLowerCase(), "i"))

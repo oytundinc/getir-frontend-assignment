@@ -29,6 +29,7 @@ export const TagsStyled = styled.div`
             padding-bottom: 13px;
 
             .ant-checkbox-wrapper {
+              margin-left: 0;
               padding-top: 18px;
 
               &:first-child {

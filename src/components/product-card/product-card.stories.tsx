@@ -19,6 +19,7 @@ const Template = (props: ProductCardProps) => (
     productPrice={0}
     productBrand={"Gorgeous Office "}
     productTags={["Mug"]}
+    productId="131"
   />
 );
 

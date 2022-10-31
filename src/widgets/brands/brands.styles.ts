@@ -24,10 +24,13 @@ export const BrandsStyled = styled.div`
           padding: 24px;
 
           .brands-checkbox-btn {
+            display: grid;
+
             padding-top: 17px;
             padding-bottom: 13px;
 
             .ant-checkbox-wrapper {
+              margin-left: 0;
               padding-top: 18px;
 
               &:first-child {

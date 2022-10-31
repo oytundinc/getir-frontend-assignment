@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 import { useCallback, useState } from "react";
 
 export const WrappedBrands = () => {
-  const { brands } = useSelector((state: any) => state.global);
+  const brands = useSelector((state: any) => state.filter.brands);
+  const companies = useSelector((state: any) => state.filter.companies);
   const [searchKey, setSearchKey] = useState<string>("");
 
   const handleSearch = useCallback(
@@ -35,7 +36,7 @@ export const WrappedBrands = () => {
                 .map((brand: string, index: number) => {
                   return (
                     <Checkbox key={`${brand}_${index}`} value={brand}>
-                      {brand}
+                      {companies[brand] ? companies[brand].name : brand}
                     </Checkbox>
                   );
                 })}

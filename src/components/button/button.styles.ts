@@ -19,4 +19,8 @@ export const ButtonStyled = styled(AntButton)`
   background-color: ${commonColors.primary};
   border: none;
   border-radius: 2px;
+
+  &.selected {
+    background-color: red;
+  }
 `;

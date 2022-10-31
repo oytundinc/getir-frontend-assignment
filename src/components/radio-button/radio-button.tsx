@@ -2,16 +2,11 @@ import { RadioButtonStyled } from "./radio-button.styles";
 
 export interface RadioButtonProps {
   radioButtonText: string;
-  onChange?: () => void;
+  value: any;
 }
 
-export const RadioButton = ({
-  radioButtonText,
-  onChange,
-}: RadioButtonProps) => {
-  return (
-    <RadioButtonStyled onChange={onChange}>{radioButtonText}</RadioButtonStyled>
-  );
+export const RadioButton = ({ radioButtonText, value }: RadioButtonProps) => {
+  return <RadioButtonStyled value={value}>{radioButtonText}</RadioButtonStyled>;
 };
 
 export default RadioButton;

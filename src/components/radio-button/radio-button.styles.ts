@@ -46,7 +46,7 @@ export const RadioButtonStyled = styled(AntRadio)`
         top: 1px;
         left: 2px;
 
-        border: 2px solid ${commonColors.primary};
+        border: 2px solid #DFDEE2;
         border-radius: 17.5px;
         background-color: ${commonColors.white};
 

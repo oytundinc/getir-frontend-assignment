@@ -1,18 +1,48 @@
+import { Radio } from "antd";
+import { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Card } from "../../components/card/card";
 import RadioButton from "../../components/radio-button/radio-button";
+import { ACTION_TYPES } from "../../store/action-types";
+import { SORTING_TYPE } from "../../store/reducers/product.reducer";
 import { SortingStyled } from "./sorting.styles";
 
 export const WrappedSorting = () => {
+  const dispatch = useDispatch();
+  const sorting = useSelector(
+    (state: any) => state.product.filterOptions.sorting
+  );
+  const handleChangeSorting = useCallback((event: any) => {
+    console.log(event.target.value);
+    dispatch({
+      type: ACTION_TYPES.SORTING_PRODUCTS,
+      payload: event.target.value
+    })
+  }, [dispatch]);
   return (
     <SortingStyled>
       <div className="sorting-container">
         <h3 className="sorting-header">Sorting</h3>
         <Card>
           <div className="sorting-radio-btn">
-            <RadioButton radioButtonText={"Price low to high"} />
-            <RadioButton radioButtonText={"Price low to low"} />
-            <RadioButton radioButtonText={"New to old"} />
-            <RadioButton radioButtonText={"Old to new"} />
+            <Radio.Group onChange={handleChangeSorting} value={sorting}>
+              <RadioButton
+                value={SORTING_TYPE.PRICE_LOW2HIGH}
+                radioButtonText={"Price low to high"}
+              />
+              <RadioButton
+                value={SORTING_TYPE.PRICE_HIGH2LOW}
+                radioButtonText={"Price low to low"}
+              />
+              <RadioButton
+                value={SORTING_TYPE.NEW2OLD}
+                radioButtonText={"New to old"}
+              />
+              <RadioButton
+                value={SORTING_TYPE.OLD2NEW}
+                radioButtonText={"Old to new"}
+              />
+            </Radio.Group>
           </div>
         </Card>
       </div>

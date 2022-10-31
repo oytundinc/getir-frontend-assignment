@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { commonColors } from "../../common/theme/color";
 import { fontSize, fontWeight } from "../../common/theme/font";
 
-export const ItemCounterStyled = styled.div`
+export const BasketItemCounterStyled = styled.div`
   .item-counter-container {
     .decrease-btn,
     .increase-btn {

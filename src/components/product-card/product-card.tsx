@@ -1,22 +1,39 @@
 import { Card } from "antd";
-import React from "react";
+import React, { useCallback } from "react";
 import { CURRENCY_SYMBOL } from "../../common/constants/currency";
 import { Button } from "../button/button";
 import { ProductCardStyled } from "./product-card.styles";
 import productImg from "../../assets/productImg.png";
+import { useDispatch } from "react-redux";
+import { ACTION_TYPES } from "../../store/action-types";
 
 export interface ProductCardProps {
+  productId: string | number;
   productPrice: number;
   productBrand: string;
+  productName?: string;
   productTags: string[];
   className?: string;
 }
 
 const WrappedProductCard = ({
+  productId,
   productPrice,
   productBrand,
   productTags,
+  productName,
 }: ProductCardProps) => {
+  const dispatch = useDispatch();
+  const handleAddToBasket = useCallback(() => {
+    dispatch({
+      type: ACTION_TYPES.ADD_PRODUCT_TO_BASKET,
+      payload: {
+        id: productId,
+        name: productName || "",
+        price: productPrice,
+      },
+    });
+  }, [dispatch, productId, productName, productPrice]);
   return (
     <ProductCardStyled>
       <Card>
@@ -31,7 +48,7 @@ const WrappedProductCard = ({
             <span className="product-card-brand">{productBrand}</span>
             <span className="product-card-tag">{productTags.join(", ")}</span>
           </div>
-          <Button>Add</Button>
+          <Button onClick={handleAddToBasket}>Add</Button>
         </div>
       </Card>
     </ProductCardStyled>
