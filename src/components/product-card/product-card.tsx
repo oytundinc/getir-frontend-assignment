@@ -44,8 +44,7 @@ const WrappedProductCard = ({
             <span className="product-card-price">
               {CURRENCY_SYMBOL.TRY} {productPrice}
             </span>
-            <span className="product-card-brand">{productBrand}</span>
-            <span className="product-card-tag">{productTags.join(", ")}</span>
+            <span className="product-card-name">{productName}</span>
           </div>
           <div className="ant-btn-container">
             <Button onClick={handleAddToBasket}>Add</Button>

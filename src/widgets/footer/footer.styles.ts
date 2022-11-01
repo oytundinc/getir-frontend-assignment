@@ -5,9 +5,8 @@ import { fontSize, fontWeight } from "../../common/theme/font";
 export const FooterStyled = styled.div`
   .footer-container {
     width: 100%;
-    margin-top: 100px;
-    margin-bottom: 40px;
     text-align: center;
+    padding: 40px 0;
 
     background-color: unset;
 

@@ -38,8 +38,7 @@ export const ProductCardStyled = styled.div`
             color: ${commonColors.primary};
           }
 
-          .product-card-brand,
-          .product-card-tag {
+          .product-card-name {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;

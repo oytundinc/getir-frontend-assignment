@@ -69,7 +69,7 @@ export const HomePageWrapped = styled.div`
         display: flex;
         justify-content: center;
 
-        margin: 36px 0 136px 0;
+        margin: 36px 0 96px 0;
 
         .ant-pagination-prev {
           display: flex;
