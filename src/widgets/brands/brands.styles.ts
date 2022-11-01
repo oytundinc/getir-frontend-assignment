@@ -18,7 +18,7 @@ export const BrandsStyled = styled.div`
         display: flex;
         flex-direction: column;
         overflow: auto;
-        
+
         height: 184px;
         padding: 16px;
 
@@ -28,6 +28,14 @@ export const BrandsStyled = styled.div`
 
           .ant-checkbox-wrapper {
             display: flex;
+
+            span {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              letter-spacing: 0.16px;
+              color: #525252;
+            }
           }
         }
       }

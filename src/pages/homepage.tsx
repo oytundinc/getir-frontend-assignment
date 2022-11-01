@@ -13,6 +13,8 @@ import { Card } from "../components/card/card";
 import { Button } from "../components/button/button";
 import { CategoryType } from "../store/reducers/filter.reducer";
 import { useImmer } from "use-immer";
+//import chevronLeft from "../assets/chevronLeft.png";
+//import chevronRight from "../assets/chevronRight.png";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -51,11 +53,14 @@ export const HomePage = () => {
     fetchInitialData();
   }, [fetchInitialData]);
 
-  const handleChangePagination = useCallback((value: number) => {
-    setPagination((draft) => {
-      draft.page = value;
-    });
-  }, [setPagination]);
+  const handleChangePagination = useCallback(
+    (value: number) => {
+      setPagination((draft) => {
+        draft.page = value;
+      });
+    },
+    [setPagination]
+  );
 
   const handleSelectCategory = useCallback(
     (item: string) => {
@@ -77,6 +82,29 @@ export const HomePage = () => {
     resetPagination();
   }, [filterOptions.brands, filterOptions.tags, resetPagination]);
 
+  /* const itemRender: PaginationProps["itemRender"] = (
+    _,
+    type,
+    originalElement
+  ) => {
+    if (type === "prev") {
+      return (
+        <span>
+          <img src={chevronLeft} alt="chevron-right" />
+          Previous
+        </span>
+      );
+    }
+    if (type === "next") {
+      return (
+        <span>
+          Next
+          <img src={chevronRight} alt="chevron-right" />
+        </span>
+      );
+    }
+    return originalElement;
+  }; */
   return (
     <HomePageWrapped>
       <Row gutter={16} className="home-page-container">

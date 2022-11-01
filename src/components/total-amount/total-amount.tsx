@@ -23,7 +23,7 @@ const TotalAmount = () => {
   return (
     <TotalAmountStyled>
       <div className="total-amount-container">
-        <span>{CURRENCY_SYMBOL.TRY}</span>
+        <span>{CURRENCY_SYMBOL.TRY} </span>
         <span>{totalPrice}</span>
       </div>
     </TotalAmountStyled>

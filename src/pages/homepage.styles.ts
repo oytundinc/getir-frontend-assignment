@@ -36,26 +36,90 @@ export const HomePageWrapped = styled.div`
       }
 
       .ant-card {
+        background: #ffffff;
         .ant-card-body {
-          .product-card-container {
-            display: grid;
-            align-items: center;
-            .product-img {
+          box-shadow: none;
+          .ant-row {
+            .ant-col-6 {
+              .product-card-container {
+                display: grid;
+                align-items: center;
+                .product-img {
+                  padding: 16px;
+                }
+                .product-card-text-container {
+                  .product-card-price {
+                  }
+                  .product-card-brand {
+                  }
+                  .product-card-tag {
+                  }
+                }
+              }
             }
-            .product-card-text-container {
-              .product-card-price {
-              }
-              .product-card-brand {
-              }
-              .product-card-tag {
-              }
-            }
+          }
+        }
+      }
 
-            .ant-btn {
-              span {
-                padding: 1px 50px;
-              }
+      .ant-pagination {
+        display: flex;
+        justify-content: center;
+
+        margin: 36px 0 136px 0;
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #697488;
+
+        .ant-pagination-prev {
+          margin-right: 56px;
+
+          button {
+            border: none;
+            background: none;
+          }
+        }
+
+        .ant-pagination-item {
+          border: none;
+          background: none;
+
+          &:hover {
+            a {
+              color: #1ea4ce;
             }
+          }
+        }
+
+        .ant-pagination-next {
+          margin-left: 56px;
+
+          button {
+            border: none;
+            background: none;
+          }
+        }
+
+        .ant-pagination-item-active {
+          background: #1ea4ce;
+          border-radius: 2px;
+          a {
+            color: #ffffff;
+          }
+
+          &:hover {
+            a {
+              color: #697488;
+            }
+          }
+        }
+
+        .ant-pagination-jump-prev,
+        .ant-pagination-jump-next {
+          span {
+            color: #697488;
           }
         }
       }
