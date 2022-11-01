@@ -10,10 +10,22 @@ export const RadioButtonStyled = styled(AntRadio)`
   }
   .icon-check {
     position: absolute;
-    left: 2px;
+    left: 3px;
+    bottom: 1px;
 
     .anticon-check {
-      color: ${commonColors.primary}
+      color: ${commonColors.primary};
+      font-size: 10px !important;
     }
+  }
+  .text-container {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    align-items: center;
+    letter-spacing: 0.16px;
+
+    color: #525252;
   }
 `;

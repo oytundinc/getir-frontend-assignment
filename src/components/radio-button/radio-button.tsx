@@ -17,7 +17,7 @@ export const RadioButton = ({
       <span className="icon-check">
         {isChecked && <CheckOutlined style={{ fontSize: "12px" }} />}
       </span>
-      {radioButtonText}
+      <span className="text-container">{radioButtonText}</span>
     </RadioButtonStyled>
   );
 };
