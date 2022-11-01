@@ -25,6 +25,10 @@ export const HomePageWrapped = styled.div`
         padding-bottom: 16px;
         .ant-btn {
           margin-right: 8px;
+
+          .selected {
+            background-color: red;
+          }
         }
       }
       .ant-card-bordered {
@@ -67,24 +71,33 @@ export const HomePageWrapped = styled.div`
 
         margin: 36px 0 136px 0;
 
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 16px;
-
-        color: #697488;
-
         .ant-pagination-prev {
+          display: flex;
+          align-items: center;
+          text-align: center;
           margin-right: 56px;
 
-          button {
-            border: none;
-            background: none;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 16px;
+          color: #697488;
+          &:hover {
+            color: ${commonColors.primary};
+          }
+          .anticon-arrow-left {
+            margin-right: 8px;
           }
         }
 
         .ant-pagination-item {
           border: none;
           background: none;
+
+          a {
+            font-weight: 600;
+            font-size: 14px;
+            color: #697488;
+          }
 
           &:hover {
             a {
@@ -94,11 +107,20 @@ export const HomePageWrapped = styled.div`
         }
 
         .ant-pagination-next {
+          display: flex;
+          align-items: center;
+          text-align: center;
           margin-left: 56px;
 
-          button {
-            border: none;
-            background: none;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 16px;
+          color: #697488;
+          &:hover {
+            color: ${commonColors.primary};
+          }
+          .anticon-arrow-right {
+            margin-left: 8px;
           }
         }
 

@@ -15,17 +15,16 @@ export const BrandsStyled = styled.div`
     }
     .ant-card {
       .ant-card-body {
-        display: flex;
         flex-direction: column;
-        overflow: auto;
 
         height: 184px;
         padding: 16px;
 
         .brand-list {
-          flex: 1;
-          overflow: auto;
-
+          margin-top: 11px;
+          overflow-y: scroll;
+          height: 118px;
+          
           .ant-checkbox-wrapper {
             display: flex;
 

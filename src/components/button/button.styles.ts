@@ -20,13 +20,14 @@ export const ButtonStyled = styled(AntButton)`
   border: none;
   border-radius: 2px;
 
-  &.selected {
-    background-color: #f2f0fd;
-  }
-
   &:hover,
   &:active {
     color: ${commonColors.white};
     background-color: ${commonColors.secondary};
+  }
+
+  &:focus {
+    background: #f2f0fd;
+    color: ${commonColors.primary};
   }
 `;

@@ -8,6 +8,7 @@ export const TotalAmountStyled = styled.div`
   padding: 16px 16px 16px 0px;
 
   .total-amount-container {
+    display: flex;
     border: 2px solid ${commonColors.primary};
     border-radius: 2px;
 

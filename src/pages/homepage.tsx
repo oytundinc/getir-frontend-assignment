@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 import { api } from "../api/api";
 import { useDispatch, useSelector } from "react-redux";
 import { ACTION_TYPES } from "../store/action-types";
-import { Col, Pagination, Row } from "antd";
+import { Col, Pagination, PaginationProps, Row } from "antd";
 import { ProductCard } from "../components/product-card/product-card";
 import { Sorting } from "../widgets/sorting/sorting";
 import { Brands } from "../widgets/brands/brands";
@@ -13,8 +13,8 @@ import { Card } from "../components/card/card";
 import { Button } from "../components/button/button";
 import { CategoryType } from "../store/reducers/filter.reducer";
 import { useImmer } from "use-immer";
-//import chevronLeft from "../assets/chevronLeft.png";
-//import chevronRight from "../assets/chevronRight.png";
+import ArrowLeftOutlined from "@ant-design/icons/lib/icons/ArrowLeftOutlined";
+import ArrowRightOutlined from "@ant-design/icons/lib/icons/ArrowRightOutlined";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -82,7 +82,7 @@ export const HomePage = () => {
     resetPagination();
   }, [filterOptions.brands, filterOptions.tags, resetPagination]);
 
-  /* const itemRender: PaginationProps["itemRender"] = (
+  const itemRender: PaginationProps["itemRender"] = (
     _,
     type,
     originalElement
@@ -90,7 +90,7 @@ export const HomePage = () => {
     if (type === "prev") {
       return (
         <span>
-          <img src={chevronLeft} alt="chevron-right" />
+          <ArrowLeftOutlined />
           Previous
         </span>
       );
@@ -99,12 +99,12 @@ export const HomePage = () => {
       return (
         <span>
           Next
-          <img src={chevronRight} alt="chevron-right" />
+          <ArrowRightOutlined />
         </span>
       );
     }
     return originalElement;
-  }; */
+  };
   return (
     <HomePageWrapped>
       <Row gutter={16} className="home-page-container">
@@ -156,6 +156,7 @@ export const HomePage = () => {
             pageSize={16}
             showSizeChanger={false}
             onChange={handleChangePagination}
+            itemRender={itemRender}
           />
         </Col>
         <Col span={6}>

@@ -17,17 +17,25 @@ export const TagsStyled = styled.div`
       .ant-card-body {
         display: flex;
         flex-direction: column;
-        overflow: auto;
         
         height: 184px;
         padding: 16px;
 
         .brand-list {
-          flex: 1;
-          overflow: auto;
-
+          margin-top: 11px;
+          overflow-y: scroll;
+          height: 118px;
+          
           .ant-checkbox-wrapper {
             display: flex;
+
+            span {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              letter-spacing: 0.16px;
+              color: #525252;
+            }
           }
         }
       }

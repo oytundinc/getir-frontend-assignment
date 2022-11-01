@@ -5,7 +5,8 @@ import { fontSize, fontWeight } from "../../common/theme/font";
 export const HeaderStyled = styled.div`
   .header-container {
     display: flex;
-
+    align-items: center;
+    justify-content: center;
     background-color: ${commonColors.primary};
 
     .header-logo {
@@ -16,6 +17,10 @@ export const HeaderStyled = styled.div`
     .header-total-amount-container {
       display: flex;
       align-items: center;
+
+      position: absolute;
+      right: 0;
+      margin-right: 104px;
       width: 129px;
       height: 76px;
 

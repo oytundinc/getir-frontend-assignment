@@ -54,6 +54,13 @@ export const WrappedBrands = () => {
               <Input placeholder="Search brand" onChange={handleSearch} />
             </div>
             <div className="brand-list">
+              <Checkbox
+                value={brands}
+                onChange={handleFilterByBrand}
+                checked={brandsFilterList.includes(brands)}
+              >
+                All
+              </Checkbox>
               {brands
                 .filter((brand: string) => {
                   return searchKey

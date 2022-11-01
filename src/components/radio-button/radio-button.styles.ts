@@ -12,7 +12,6 @@ export const RadioButtonStyled = styled(AntRadio)`
     position: absolute;
     left: 3px;
     bottom: 1px;
-
     .anticon-check {
       color: ${commonColors.primary};
       font-size: 10px !important;
@@ -22,10 +21,18 @@ export const RadioButtonStyled = styled(AntRadio)`
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-
     align-items: center;
     letter-spacing: 0.16px;
-
     color: #525252;
+  }
+
+  .ant-radio-checked {
+    .ant-radio-inner {
+      border-color: ${commonColors.primary};
+      box-shadow: 0 0 0 1px ${commonColors.primary};
+      &:after {
+        display: none;
+      }
+    }
   }
 `;

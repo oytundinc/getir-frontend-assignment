@@ -55,6 +55,13 @@ export const WrappedTags = () => {
               <Input placeholder="Search tag" onChange={handleSearch} />
             </div>
             <div className="brand-list">
+              <Checkbox
+                value={tags}
+                onChange={handleFilterByTag}
+                checked={tagsFilterList.includes(tags)}
+              >
+                All
+              </Checkbox>
               {tags
                 .filter((tags: string) => {
                   return searchKey
