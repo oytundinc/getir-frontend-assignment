@@ -20,7 +20,7 @@ export const HeaderStyled = styled.div`
 
       position: absolute;
       right: 0;
-      margin-right: 104px;
+      margin-right: 146px;
       width: 129px;
       height: 76px;
 

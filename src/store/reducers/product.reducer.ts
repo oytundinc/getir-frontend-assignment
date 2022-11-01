@@ -93,9 +93,11 @@ export const productReducer = (state = initialState, action: any) => {
     case ACTION_TYPES.SELECT_CATEGORY: {
       return produce(state, (draft) => {
         draft.selectedCategory = action.payload;
-        draft.filteredList = state.list.filter(
-          (item: any) => item.itemType === draft.selectedCategory
+        const result = draft.list.filter(
+          (item: any) => item.itemType === action.payload
         );
+
+        draft.filteredList = result;
       });
     }
 

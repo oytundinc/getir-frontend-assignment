@@ -105,6 +105,8 @@ export const HomePage = () => {
     }
     return originalElement;
   };
+
+  console.log("selectedCategory", selectedCategory);
   return (
     <HomePageWrapped>
       <Row gutter={16} className="home-page-container">
@@ -120,6 +122,7 @@ export const HomePage = () => {
               return (
                 <Button
                   onClick={() => handleSelectCategory(item)}
+                  type="primary"
                   className={item === selectedCategory ? "selected" : ""}
                   key={item}
                 >

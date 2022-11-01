@@ -4,7 +4,7 @@ export interface CheckboxProps {
   children: string;
   value?: string;
   onChange?: (event: any) => void;
-  checked?: boolean;
+  checked?: boolean
 }
 
 export const Checkbox = ({

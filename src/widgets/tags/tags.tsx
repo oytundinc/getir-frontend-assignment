@@ -45,6 +45,18 @@ export const WrappedTags = () => {
     [dispatch, tagsFilterList]
   );
 
+  const handleSelectAllTag = useCallback(
+    (event: any) => {
+      if (event.target.checked) {
+        dispatch({
+          type: ACTION_TYPES.FILTER_PRODUCTS_BY_TAG,
+          payload: [],
+        });
+      }
+    },
+    [dispatch]
+  );
+
   return (
     <TagsStyled>
       <div className="tags-container">
@@ -56,9 +68,9 @@ export const WrappedTags = () => {
             </div>
             <div className="brand-list">
               <Checkbox
-                value={tags}
-                onChange={handleFilterByTag}
-                checked={tagsFilterList.includes(tags)}
+                value="all"
+                onChange={handleSelectAllTag}
+                checked={tagsFilterList.length === 0}
               >
                 All
               </Checkbox>

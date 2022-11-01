@@ -44,6 +44,18 @@ export const WrappedBrands = () => {
     [brandsFilterList, dispatch]
   );
 
+  const handleSelectAllBrand = useCallback(
+    (event: any) => {
+      if (event.target.checked) {
+        dispatch({
+          type: ACTION_TYPES.FILTER_PRODUCTS_BY_BRAND,
+          payload: [],
+        });
+      }
+    },
+    [dispatch]
+  );
+
   return (
     <BrandsStyled>
       <div className="brands-container">
@@ -55,9 +67,9 @@ export const WrappedBrands = () => {
             </div>
             <div className="brand-list">
               <Checkbox
-                value={brands}
-                onChange={handleFilterByBrand}
-                checked={brandsFilterList.includes(brands)}
+                value="all"
+                onChange={handleSelectAllBrand}
+                checked={brandsFilterList.length === 0}
               >
                 All
               </Checkbox>
