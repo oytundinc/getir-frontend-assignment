@@ -18,9 +18,11 @@ export const BasketStyled = styled.div`
           padding-bottom: 18px;
           padding-top: 18px;
           .basket-item-container {
-            padding-right: 43px;
           }
           .item-counter-container {
+            right: 0px;
+            position: absolute;
+            margin-right: 30px;
           }
         }
       }
